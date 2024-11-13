@@ -49,6 +49,7 @@ insert into employee values(201,"Utkarsh",200,"17/01/2020",50000,2);
 insert into employee values(301,"Achintya",100,"01/09/2004",30000,3);
 insert into employee values(401,"Vivek",101,"03/08/2003",10000,4);
 insert into employee values(501,"Aditya",101,"29/02/2008",90000,5);
+insert into employee values(301,"Lucky",101,"29/02/2007",20000,1);
 
 insert into incentives values(101,"12/03/2004",50000);
 insert into incentives values(201,"17/03/2024",25000);
@@ -88,3 +89,22 @@ set dloc="Hyderabad" where dno=4;
 select e.empno,e.ename,d.dname,a.job_role,d.dloc,p.ploc
 from employee e, dept d,assignedTo a,project p
 where e.dno=d.dno and e.empno=a.empno and a.pno = p.pno and d.dloc=p.ploc;
+
+
+select ename from employee
+where mgr_no = (select max(mgr_no) from employee);
+
+select ename from employee 
+where sal>(select avg(sal) from employee);
+
+select ename from employee
+where sal = (select max(sal) from employee where 
+sal<(select max(sal) from employee));
+
+select * from employee
+where empno=(select empno from incentives 
+where amt=(select max(amt) from incentives
+where amt<(select max(amt) from incentives)));
+
+select e.ename,m.ename as mgr_name from employee e,employee m
+where e.mgr_no=m.empno and e.dno=m.dno;
