@@ -1,0 +1,5 @@
+{"_id":{"$oid":"674fe7c38b41bad6327f3b1a"},"custid":1,"acc_bal":10000,"acc_type":"Saving"}
+{"_id":{"$oid":"674fe7c38b41bad6327f3b1b"},"custid":1,"acc_bal":20000,"acc_type":"Checking"}
+{"_id":{"$oid":"674fe7c38b41bad6327f3b1c"},"custid":3,"acc_bal":50000,"acc_type":"Checking"}
+{"_id":{"$oid":"674fe7c38b41bad6327f3b1d"},"custid":4,"acc_bal":10000,"acc_type":"Saving"}
+{"_id":{"$oid":"674fe7c38b41bad6327f3b1e"},"custid":5,"acc_bal":2000,"acc_type":"Checking"}
